@@ -1,0 +1,21 @@
+-- 1. Create a new database named 'emp' if it does not already exist
+CREATE DATABASE IF NOT EXISTS emp;
+
+-- 2. Switch to the 'emp' database to perform operations inside it
+USE emp;
+
+-- 3. Create the 'user' table matching the Java Entity class attributes
+CREATE TABLE IF NOT EXISTS `user` (
+    -- id: Maps to 'Long id'. Using BIGINT to accommodate the Java Long size.
+    -- Uses AUTO_INCREMENT to support standard automatic generation strategies.
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    
+    -- firstname: Maps to 'private String firstname'
+    firstname VARCHAR(255),
+    
+    -- lasttname: Maps to 'private String lasttname' (matching your exact Java variable spelling)
+    lasttname VARCHAR(255)
+);
+
+-- 4. Verify the table creation structure (Optional)
+-- DESCRIBE `user`;
